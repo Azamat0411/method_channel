@@ -1,3 +1,4 @@
+/*
 import 'dart:async';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -378,17 +379,16 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+*/
 
 
-/*
+
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
-import 'package:method_channel/printer/printing/printing.dart';
 import 'package:method_channel/printer/pdf/pdf.dart';
 import 'package:method_channel/printer/pdf/widgets.dart' as pw;
 import 'package:method_channel/printer/pdf/src/widgets/font.dart';
 import 'package:method_channel/printer/printing/src/interface.dart';
-import 'package:method_channel/printer/printing/src/preview/controller.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -408,17 +408,15 @@ class MyApp extends StatelessWidget {
         body: Container(),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
-            debugPrint('aaaaaa');
             Future<Uint8List> onLayout(format) => _generatePdf(const PdfPageFormat(70 * 72 / 25.4, 200 * 72 / 25.4, marginAll: 5).portrait, "");
             PrintingPlatform.instance.layoutPdf(
               null,
               onLayout,
-              'name',
+              'Azamat',
               const PdfPageFormat(70 * 72 / 25.4, 200 * 72 / 25.4, marginAll: 5).portrait,
               true,
               false
             );
-            // debugPrint("result: $result");
           },
         ),
       ),
@@ -524,4 +522,3 @@ class MyApp extends StatelessWidget {
     return pdf.save();
   }
 }
- */

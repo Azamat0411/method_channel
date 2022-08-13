@@ -174,8 +174,6 @@ class MethodChannelPrinting extends PrintingPlatform {
       'usePrinterSettings': usePrinterSettings,
     };
 
-    debugPrint("wwwwwww");
-
     await _channel.invokeMethod<int>('printPdf', params);
     try {
       debugPrint("try");

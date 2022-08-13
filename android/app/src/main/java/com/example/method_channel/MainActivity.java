@@ -1,5 +1,6 @@
 package com.example.method_channel;
 
+/***
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -45,7 +46,7 @@ public class MainActivity extends FlutterActivity implements MethodCallHandler, 
     private final String tag = "TTS";
     private final String googleTtsEngine = "com.google.android.tts";
     private boolean isTtsInitialized = false;
-    private ArrayList<Runnable> pendingMethodCalls = new ArrayList<>();
+    private final ArrayList<Runnable> pendingMethodCalls = new ArrayList<>();
     private final HashMap<String, String> utterances = new HashMap<>();
     Bundle bundle;
     private int silencems;
@@ -60,7 +61,6 @@ public class MainActivity extends FlutterActivity implements MethodCallHandler, 
         instance.initInstance(flutterEngine.getDartExecutor().getBinaryMessenger(), this.getActivity());
     }
 
-    /** Plugin registration. */
     @SuppressWarnings("deprecation")
     public static void registerWith(io.flutter.plugin.common.PluginRegistry.Registrar registrar) {
         MainActivity instance = new MainActivity();
@@ -76,7 +76,6 @@ public class MainActivity extends FlutterActivity implements MethodCallHandler, 
         tts = new TextToSpeech(context, onInitListener, googleTtsEngine);
     }
 
-    /** Android Plugin APIs */
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
         Log.d("TAG", "onAttachedToEngine: onAttached");
@@ -668,10 +667,7 @@ public class MainActivity extends FlutterActivity implements MethodCallHandler, 
         return isBindConnection;
     }
 }
-
-
-/*
-package com.example.method_channel;
+***/
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity;
@@ -689,4 +685,3 @@ public class MainActivity extends FlutterActivity {
         channel.setMethodCallHandler(handler);
     }
 }
- */
